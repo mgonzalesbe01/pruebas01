@@ -9,6 +9,11 @@ app.use(cors());
 
 let products = [];
 
+// Ruta para el endpoint raíz
+app.get('/', (req, res) => {
+  res.send('Bienvenido a la API de productos');
+});
+
 app.get('/products', (req, res) => {
   res.json(products);
 });
@@ -20,5 +25,5 @@ app.post('/products', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
